@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <AzureFunctionsVersion>v1</AzureFunctionsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.14" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CobList\CobList.cblproj" />
+    <ProjectReference Include="..\LoanAmort\LoanAmort.cblproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MicroFocus.COBOL.Runtime">
+      <HintPath>..\..\..\..\..\..\Development\References\Solar\win\cobdir\Release\dotNet\referenceassemblies\v4.0\Azure\v2.9\MicroFocus.COBOL.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroFocus.COBOL.Runtime.Azure">
+      <HintPath>..\..\..\..\..\..\Development\References\Solar\win\cobdir\Release\dotNet\referenceassemblies\v4.0\Azure\v2.9\MicroFocus.COBOL.Runtime.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroFocus.COBOL.SqlCLR.RunTime">
+      <HintPath>..\..\..\..\..\..\Development\References\Solar\win\cobdir\Release\dotNet\assemblies\v4.0\MicroFocus.COBOL.SqlCLR.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+</Project>
